@@ -10,7 +10,7 @@ let dstCanvas = document.getElementById("dstCanvas");
 let dstCtx = dstCanvas.getContext("2d");
 let sB = document.getElementById("startButton");
 
-// sB.addEventListener("click", buttonStart());
+sB.addEventListener("click", buttonStart());
 
 async function buttonStart() {
   try {
@@ -18,17 +18,17 @@ async function buttonStart() {
     let zT = document.getElementById("zoneType");
     let tValue = document.getElementById("tValue");
     console.log(zT, tValue);
-    // let imgData = f.getPixels(originalImage);
-    // await load_allWorkers();
-    // console.log("workers loaded");
-    // let results = await getbestOtsu(imgData, tValue, zT, 5);
-    // let bestImg = await otsuFilter(imgData, results.params);
-    // console.log(results);
-    // dstCtx.putImageData(
-    //   bestImg,
-    //   originalImage.clientWidth,
-    //   originalImage.clientHeight
-    // );
+    let imgData = f.getPixels(originalImage);
+    await load_allWorkers();
+    console.log("workers loaded");
+    let results = await getbestOtsu(imgData, tValue, zT, 5);
+    let bestImg = await otsuFilter(imgData, results.params);
+    console.log(results);
+    dstCtx.putImageData(
+      bestImg,
+      originalImage.clientWidth,
+      originalImage.clientHeight
+    );
   } catch (e) {
     console.log("crashed in main");
     console.log(e);

@@ -1,0 +1,1 @@
+execute browserify ./src/index.js -o ./src/video-bundle.js before serving
