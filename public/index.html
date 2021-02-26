@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <title>Best Otsu</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div>
+      <img id="originalImg" src = "../img/cropzone.png"><br>
+      <canvas id="dstCanvas"></canvas>
+    </div>
+    <div>
+      <label for="zone">Type:</label>
+      <select name="zoneType" id="zoneType">
+        <option value="text">Text</option>
+        <option value="digit">Digit</option>
+      </select><br>
+      <label for="tValue">Target Value:</label>
+      <input type="text" id="tValue" name="tValue"><br>
+      <button id="startButton">
+        Find Best Otsu parameters
+      </button>
+    </div>
+    <script src="../src/video-bundle.js"></script>
+  </body>
+</html>
